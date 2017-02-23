@@ -9,25 +9,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Vias = (function () {
-    function Vias() {
+var Via = (function () {
+    function Via() {
     }
-    return Vias;
+    return Via;
 }());
-exports.Vias = Vias;
+exports.Via = Via;
+var VIAS = [
+    { id: 10, tipoVia: 'CALLE', nombreVia: 'ALTAMIRA', distrito: 7, seccion: 1, codigoPostal: '04006' },
+    { id: 11, tipoVia: 'CALLE', nombreVia: 'BECERRA', distrito: 8, seccion: 6, codigoPostal: '04006' },
+    { id: 12, tipoVia: 'CALLE', nombreVia: 'CARRERA DEL DARRO', distrito: 7, seccion: 3, codigoPostal: '04005' },
+    { id: 13, tipoVia: 'CALLE', nombreVia: 'DINAMARCA', distrito: 7, seccion: 9, codigoPostal: '04005' },
+    { id: 14, tipoVia: 'AVDA', nombreVia: 'FRANCISCO DE ASÍS', distrito: 7, seccion: 5, codigoPostal: '04003' },
+    { id: 15, tipoVia: 'CALLE', nombreVia: 'GARCILASO DE LA VEGA', distrito: 7, seccion: 1, codigoPostal: '04003' },
+    { id: 16, tipoVia: 'CALLE', nombreVia: 'HUEBRO', distrito: 6, seccion: 2, codigoPostal: '04004' },
+    { id: 17, tipoVia: 'CALLE', nombreVia: 'LORCA', distrito: 4, seccion: 2, codigoPostal: '04005' },
+    { id: 18, tipoVia: 'CALLE', nombreVia: 'MARÍA DE LA O', distrito: 2, seccion: 3, codigoPostal: '04006' },
+    { id: 19, tipoVia: 'CALLE', nombreVia: 'PETENERA', distrito: 7, seccion: 5, codigoPostal: '04007' },
+    { id: 20, tipoVia: 'CALLE', nombreVia: 'RIO DE JANEIRO', distrito: 7, seccion: 4, codigoPostal: '04001' },
+    { id: 21, tipoVia: 'PLAZA', nombreVia: 'DERECHOS HUMANOS', distrito: 4, seccion: 6, codigoPostal: '04003' },
+];
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'Callejero';
-        this.via = {
-            id: 1,
-            tipoVia: 'CALLE',
-            nombreVia: 'ALTAMIRA'
-        };
+        this.title = 'Callejeros';
+        this.vias = VIAS;
     }
+    AppComponent.prototype.onSelect = function (via) {
+        this.selectedVia = via;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <header><h1>{{title}}</h1></header>\n    <div id='main'>\n      <article>\n        <h2>C\u00F3digo: {{via.id}}</h2>\n        <div  class=\"article\"><label>Tipo de v\u00EDa: </label>{{via.tipoVia}}</div>\n        <div> <label>Nombre de v\u00EDa: </label>{{via.nombreVia}} </div>\n      </article>\n\n      <nav> \n        <label>Edici\u00F3n del Nombre de v\u00EDa: </label>\n        <input  [(ngModel)]=\"via.nombreVia\" placeholder=\"via\">\n      </nav>\n      <aside>Localizador</aside>\n\n    </div>\n\n     <footer>Vial - 2017</footer>\n\n    "
+            template: "\n    <header><h1>{{title}}</h1></header>\n    <div id='main'>\n      <article>\n        <h2>C\u00F3digo: {{via.id}}</h2>\n        <div  class=\"article\"><label>Tipo de v\u00EDa: </label>{{via.tipoVia}}</div>\n        <div> <label>Nombre de v\u00EDa: </label> </div>\n      </article>\n\n      <nav> \n        <label>Listado de v\u00EDas: </label>\n        <ul class=\"vias\">\n          <li *ngFor=\"let via of vias\"\n        [class.selected]=\"via === selectedVia\"\n        (click)=\"onSelect(via)\">\n        <span class=\"badge\">{{via.id}} </span> {{via.nombreVia}} \n      </li>\n    </ul>\n        <input  [(ngModel)]=\"via.nombreVia\" placeholder=\"via\">\n      </nav>\n      <aside>Localizador</aside>\n\n    </div>\n\n     <footer>Vial - 2017</footer>\n\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
