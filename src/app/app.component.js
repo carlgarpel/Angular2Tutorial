@@ -27,7 +27,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <h2>C\u00F3digo: {{via.id}}</h2>\n    <div><label>Tipo de v\u00EDa: </label>{{via.tipoVia}}</div>\n    <div><label>Nombre de v\u00EDa: </label>{{via.nombreVia}}</div>\n    <div>\n    <br/>\n      <label>Edici\u00F3n del Nombre de v\u00EDa: </label>\n      <input  [(ngModel)]=\"via.nombreVia\" placeholder=\"via\">\n    </div>\n    "
+            template: "\n    <header><h1>{{title}}</h1></header>\n    <div id='main'>\n      <article>\n        <h2>C\u00F3digo: {{via.id}}</h2>\n        <div  class=\"article\"><label>Tipo de v\u00EDa: </label>{{via.tipoVia}}</div>\n        <div> <label>Nombre de v\u00EDa: </label>{{via.nombreVia}} </div>\n      </article>\n\n      <nav> \n        <label>Edici\u00F3n del Nombre de v\u00EDa: </label>\n        <input  [(ngModel)]=\"via.nombreVia\" placeholder=\"via\">\n      </nav>\n      <aside>Localizador</aside>\n\n    </div>\n\n     <footer>Vial - 2017</footer>\n\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
