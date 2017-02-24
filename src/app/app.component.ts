@@ -7,7 +7,7 @@ const VIAS: Via[] = [
   {id: 12, tipoVia: 'CALLE', nombreVia: 'CARRERA DEL DARRO', distrito: 7, seccion: 3, codigoPostal: '04005' },
   {id: 13, tipoVia: 'CALLE', nombreVia: 'DINAMARCA', distrito: 7, seccion: 9, codigoPostal: '04005' },
   {id: 14, tipoVia: 'AVDA', nombreVia: 'FRANCISCO DE ASÍS', distrito: 7, seccion: 5, codigoPostal: '04003' },
-  {id: 15, tipoVia: 'AVDA', nombreVia: 'FRANCISCO DE ASÍS', distrito: 7, seccion: 5, codigoPostal: '04003' }
+  {id: 15, tipoVia: 'AVDA', nombreVia: 'JUAN', distrito: 7, seccion: 5, codigoPostal: '04003' }
  
 ];
 
