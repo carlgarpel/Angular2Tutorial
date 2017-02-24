@@ -20,7 +20,8 @@ var VIAS = [
     { id: 11, tipoVia: 'CALLE', nombreVia: 'BECERRA', distrito: 8, seccion: 6, codigoPostal: '04006' },
     { id: 12, tipoVia: 'CALLE', nombreVia: 'CARRERA DEL DARRO', distrito: 7, seccion: 3, codigoPostal: '04005' },
     { id: 13, tipoVia: 'CALLE', nombreVia: 'DINAMARCA', distrito: 7, seccion: 9, codigoPostal: '04005' },
-    { id: 14, tipoVia: 'AVDA', nombreVia: 'FRANCISCO DE ASÍS', distrito: 7, seccion: 5, codigoPostal: '04003' }
+    { id: 14, tipoVia: 'AVDA', nombreVia: 'FRANCISCO DE ASÍS', distrito: 7, seccion: 5, codigoPostal: '04003' },
+    { id: 15, tipoVia: 'AVDA', nombreVia: 'FRANCISCO DE ASÍS', distrito: 7, seccion: 5, codigoPostal: '04003' }
 ];
 var AppComponent = (function () {
     function AppComponent() {
@@ -33,7 +34,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <header><h1></h1></header>\n    <div id='main'>\n      <article  *ngIf=\"selectedVia\">\n        <h2>C\u00F3digo: </h2>\n        <div  class=\"article\"><label>Tipo de v\u00EDa: </label>{{selectedVia.tipoVia}} </div>\n        <div> <label>Distrito: </label>{{selectedVia.distrito}} </div>\n      </article>\n\n      <nav> \n        <label>Listado de v\u00EDas: </label>\n        <ul class=\"vias\">\n          <li *ngFor=\"let via of cvias\"\n       [class.selected]=\"via === selectedVia\"\n        (click)=\"onSelect(via)\">\n        <span class=\"badge\">{{via.id}} </span> {{via.nombreVia}}\n              </li>\n    </ul>\n        \n      </nav>\n     <aside *ngIf=\"selectedVia\">Aqui \n\n          <h2>{{selectedVia.nombreVia}} Detalle</h2>\n          <div><label>id: </label>{{selectedVia.id}}</div>\n          <div>\n            <label>nombre: </label>\n            <input [(ngModel)]=\"selectedVia.nombreVia\" placeholder=\"via\"/>\n          </div>\n\n     </aside>\n    </div>\n\n     <footer>Vial - 2017</footer>\n    "
+            template: "\n    <header><h1>{{title}}</h1></header>\n    <div id='main'>\n      <article  *ngIf=\"selectedVia\">\n        <h2>C\u00F3digo: </h2>\n        <div  class=\"article\"><label>Tipo de v\u00EDa: </label>{{selectedVia.tipoVia}} </div>\n        <div  class=\"article\"><label>Nombre de v\u00EDa: </label>{{selectedVia.nombreVia}} </div>\n        <div> <label>Distrito: </label>{{selectedVia.distrito}} </div>\n        <div> <label>Secci\u00F3n: </label>{{selectedVia.seccion}} </div>\n        <div> <label>C\u00F3digo Postal: </label>{{selectedVia.codigoPostal}} </div>\n      </article>\n\n      <nav> \n        <label>Listado de v\u00EDas: </label>\n        <ul class=\"vias\">\n          <li *ngFor=\"let via of cvias\"\n             [class.selected]=\"via === selectedVia\"\n             (click)=\"onSelect(via)\">\n                <span class=\"badge\">{{via.id}} </span> {{via.nombreVia}}\n         </li>\n    </ul>\n        \n      </nav>\n     <aside *ngIf=\"selectedVia\">Edite el nombre de v\u00EDa:\n\n          <h2>{{selectedVia.nombreVia}}</h2>\n          <div><label>id: </label>{{selectedVia.id}}</div>\n          <div>\n            <label>nombre: </label>\n            <input [(ngModel)]=\"selectedVia.nombreVia\" placeholder=\"via\"/>\n          </div>\n\n     </aside>\n    </div>\n\n     <footer>Vial - 2017</footer>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
