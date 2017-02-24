@@ -28,7 +28,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <header><h1>{{title}}</h1></header>\n    <div id='main'>\n     \n\n      <nav> \n        <label>Listado de v\u00EDas: </label>\n        <ul class=\"vias\">\n          <li *ngFor=\"let via of cvias\"\n             [class.selected]=\"via === selectedVia\"\n             (click)=\"onSelect(via)\">\n                <span class=\"badge\">{{via.id}} </span> {{via.nombreVia}}\n         </li>\n        </ul>\n        \n      </nav>\n      <mi-via-ficha [via]=\"selectedVia\"></mi-via-ficha>\n\n    </div>\n\n     <footer>Vial - 2017</footer>\n    "
+            template: "\n    <header><h1>{{title}}</h1></header>\n    <div id='main'>\n     <mi-via-ficha [via]=\"selectedVia\"></mi-via-ficha>\n\n      <nav> \n        <label>Listado de v\u00EDas: </label>\n        <ul class=\"vias\">\n          <li *ngFor=\"let via of cvias\"\n             [class.selected]=\"via === selectedVia\"\n             (click)=\"onSelect(via)\">\n                <span class=\"badge\">{{via.id}} </span> {{via.nombreVia}}\n         </li>\n        </ul>\n        \n      </nav>\n      \n\n    </div>\n \n     <footer>Vial - 2017</footer>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

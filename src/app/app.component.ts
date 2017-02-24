@@ -16,7 +16,7 @@ const VIAS: Via[] = [
   template: `
     <header><h1>{{title}}</h1></header>
     <div id='main'>
-     
+     <mi-via-ficha [via]="selectedVia"></mi-via-ficha>
 
       <nav> 
         <label>Listado de vías: </label>
@@ -29,10 +29,10 @@ const VIAS: Via[] = [
         </ul>
         
       </nav>
-      <mi-via-ficha [via]="selectedVia"></mi-via-ficha>
+      
 
     </div>
-
+ 
      <footer>Vial - 2017</footer>
     `
 })
