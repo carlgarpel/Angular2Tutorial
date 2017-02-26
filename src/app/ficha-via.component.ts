@@ -2,49 +2,31 @@ import { Component, Input } from '@angular/core';
 
 import { Via } from './via';
 
-
+//<div  *ngIf="via">
 
 @Component({
 
-  selector: 'mi-via-ficha',
+  selector: 'article',
 
   template: `
 
-    <article  *ngIf="via">
+   <div  *ngIf="selectedVia">
 
         <h2>Código: </h2>
 
-        <div  class="article"><label>Tipo de vía: </label>{{via.tipoVia}} </div>
+        <div  class="article"><label>Tipo de vía: </label>{{selectedVia.tipoVia}} </div>
 
-        <div  class="article"><label>Nombre de vía: </label>{{via.nombreVia}} </div>
+        <div  class="article"><label>Nombre de vía: </label>{{selectedVia.nombreVia}} </div>
 
-        <div> <label>Distrito: </label>{{via.distrito}} </div>
+        <div> <label>Distrito: </label>{{selectedVia.distrito}} </div>
 
-        <div> <label>Sección: </label>{{via.seccion}} </div>
+        <div> <label>Sección: </label>{{selectedVia.seccion}} </div>
 
-        <div> <label>Código Postal: </label>{{via.codigoPostal}} </div>
+        <div> <label>Código Postal: </label>{{selectedVia.codigoPostal}} </div>
 
-    </article>
+     </div>
 
-    <aside *ngIf="via">Edite el nombre de vía:
-
-
-
-          <h2>{{via.nombreVia}}</h2>
-
-          <div><label>id: </label>{{via.id}}</div>
-
-          <div>
-
-            <label>nombre: </label>
-
-            <input [(ngModel)]="via.nombreVia" placeholder="via"/>
-
-          </div>
-
-
-
-    </aside>
+    
 
   `
 
@@ -52,8 +34,7 @@ import { Via } from './via';
 
 export class FichaViaComponent {
 
-  @Input()
+ 
 
-  via: Via;
-
+ 
 }

@@ -7,6 +7,12 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent }  from './app.component';
 
 import { FichaViaComponent } from './ficha-via.component';
+import { HeaderComponent } from './header.component';
+import { FooterComponent } from './footer.component';
+
+
+
+import { NavComponent } from './nav.component';
 
 @NgModule({
 
@@ -15,6 +21,7 @@ import { FichaViaComponent } from './ficha-via.component';
     BrowserModule,
 
     FormsModule
+   
 
   ],
 
@@ -22,7 +29,11 @@ import { FichaViaComponent } from './ficha-via.component';
 
     AppComponent,
 
-    FichaViaComponent
+    FichaViaComponent,
+    FooterComponent,
+    HeaderComponent,
+    NavComponent
+
 
   ],
 
