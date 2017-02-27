@@ -12,9 +12,9 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
-var ficha_via_component_1 = require('./ficha-via.component');
 var header_component_1 = require('./header.component');
 var footer_component_1 = require('./footer.component');
+var article_component_1 = require('./article.component');
 var nav_component_1 = require('./nav.component');
 var AppModule = (function () {
     function AppModule() {
@@ -27,10 +27,10 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                ficha_via_component_1.FichaViaComponent,
                 footer_component_1.FooterComponent,
                 header_component_1.HeaderComponent,
-                nav_component_1.NavComponent
+                nav_component_1.NavComponent,
+                article_component_1.ArticleComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
