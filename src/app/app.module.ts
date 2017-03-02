@@ -13,6 +13,9 @@ import { ArticleComponent } from './article.component';
 import { Logger } from './logger.service';
 import { ViaSeleccionada } from './via-seleccionada';
 
+import {NavService}   from './nav.service';
+import {Subscription} from 'rxjs/Subscription'
+
 
 import { NavComponent } from './nav.component';
 
@@ -35,14 +38,20 @@ import { NavComponent } from './nav.component';
     FooterComponent,
     HeaderComponent,
     NavComponent,
-    ArticleComponent
+    ArticleComponent,
+  
 
 
   ],
-  providers: [ViaSeleccionada],
+
+
+
+  providers: [ViaSeleccionada, NavService],
 
   bootstrap: [ AppComponent ]
 
 })
 
 export class AppModule { }
+
+ 

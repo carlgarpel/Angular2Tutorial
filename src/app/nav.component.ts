@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Via } from './via';
 import {Injectable} from '@angular/core';
-import { ViaSeleccionada } from './via-seleccionada'
+import { ViaSeleccionada } from './via-seleccionada';
+import { NavService} from './nav.service';
 
 
 
@@ -63,13 +64,14 @@ export class NavComponent {
    selectedVia: Via;
 
   
-constructor(private service: ViaSeleccionada) {}
+constructor(private service: ViaSeleccionada, private _navService:NavService) {}
 
 
   onSelect(via: Via): void {
 
     this.selectedVia = via;
     this.service.addVia(via);
+     this._navService.changeNav(via);
 
   }
 

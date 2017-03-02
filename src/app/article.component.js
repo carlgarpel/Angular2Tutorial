@@ -11,13 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var via_seleccionada_1 = require('./via-seleccionada');
 var nav_component_1 = require('./nav.component');
+var nav_service_1 = require('./nav.service');
 var ArticleComponent = (function () {
-    function ArticleComponent(service) {
-        this.service = service;
+    function ArticleComponent(_navService) {
+        this._navService = _navService;
     }
     ArticleComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.subscription = this.service.viaSeleccionada$.subscribe(function (item) { return _this.item = item; });
+        this.subscription = this._navService.navItem$.subscribe(function (item) { return _this.item = item; });
     };
     ArticleComponent.prototype.ngOnDestroy = function () {
         // prevent memory leak when component is destroyed
@@ -29,7 +30,7 @@ var ArticleComponent = (function () {
             providers: [via_seleccionada_1.ViaSeleccionada, nav_component_1.NavComponent],
             template: "\n    \n    \n  <div >\n      <h2>Ficha:   </h2>\n      <div><label>id: </label>{{item.id}}</div>\n      <div>\n        <label >Nombre: {{item.nombreVia}}</label>\n      <!-- <input [(ngModel)]=\"item.nombreVia\" placeholder=\"name\"/> -->\n      </div>\n    </div>\n   \n      \n     \n   \n    "
         }), 
-        __metadata('design:paramtypes', [via_seleccionada_1.ViaSeleccionada])
+        __metadata('design:paramtypes', [nav_service_1.NavService])
     ], ArticleComponent);
     return ArticleComponent;
 }());

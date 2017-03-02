@@ -5,6 +5,7 @@ import {Injectable} from '@angular/core';
 import { ViaSeleccionada } from './via-seleccionada';
 import {Subscription} from 'rxjs/Subscription';
 import  { NavComponent} from './nav.component';
+import {NavService}   from './nav.service';  
 
 
 
@@ -42,13 +43,12 @@ export class ArticleComponent  implements OnInit, OnDestroy{
   item: Via;
   subscription:Subscription;
 
-constructor(private service: ViaSeleccionada) {}
+constructor(private _navService:NavService) {}
 
-   ngOnInit () {
-     this.subscription= this.service.viaSeleccionada$.subscribe(item => this.item = item)
-
-
- }
+  ngOnInit() {
+    this.subscription = this._navService.navItem$.subscribe(
+      item => this.item = item);
+  }
   ngOnDestroy() {
     // prevent memory leak when component is destroyed
     this.subscription.unsubscribe();
@@ -57,4 +57,7 @@ constructor(private service: ViaSeleccionada) {}
 
  
   }
+
+
+
 
