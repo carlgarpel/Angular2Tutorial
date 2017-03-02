@@ -6,10 +6,12 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 
-import { FichaViaComponent } from './ficha-via.component';
+
 import { HeaderComponent } from './header.component';
 import { FooterComponent } from './footer.component';
-
+import { ArticleComponent } from './article.component';
+import { Logger } from './logger.service';
+import { ViaSeleccionada } from './via-seleccionada';
 
 
 import { NavComponent } from './nav.component';
@@ -29,13 +31,15 @@ import { NavComponent } from './nav.component';
 
     AppComponent,
 
-    FichaViaComponent,
+   
     FooterComponent,
     HeaderComponent,
-    NavComponent
+    NavComponent,
+    ArticleComponent
 
 
   ],
+  providers: [ViaSeleccionada],
 
   bootstrap: [ AppComponent ]
 

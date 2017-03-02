@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Via } from './via';
-import { ViaSeleccionada } from './via.service';
-
+import {Injectable} from '@angular/core';
+import { ViaSeleccionada } from './via-seleccionada'
 
 
 
@@ -30,7 +30,8 @@ const VIAS: Via[] = [
 @Component({
 
   selector: 'nav',
-  providers: [ViaSeleccionada],
+
+  
 
   template: `
     
@@ -59,14 +60,16 @@ export class NavComponent {
 
   cvias = VIAS;
 
-  selectedVia: Via;
+   selectedVia: Via;
 
-   constructor(public service: ViaSeleccionada){}
+  
+constructor(private service: ViaSeleccionada) {}
+
 
   onSelect(via: Via): void {
 
     this.selectedVia = via;
-    this.service.setViaSeleccionada(via);
+    this.service.addVia(via);
 
   }
 
