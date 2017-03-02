@@ -9,20 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var core_2 = require('@angular/core');
 var via_seleccionada_1 = require('./via-seleccionada');
+var nav_component_1 = require('./nav.component');
 var ArticleComponent = (function () {
     function ArticleComponent(service) {
         this.service = service;
-        this.selectedVia = this.service.getVia();
     }
+    ArticleComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.subscription = this.service.viaSeleccionada$.subscribe(function (item) { return _this.item = item; });
+    };
+    ArticleComponent.prototype.ngOnDestroy = function () {
+        // prevent memory leak when component is destroyed
+        this.subscription.unsubscribe();
+    };
     ArticleComponent = __decorate([
         core_1.Component({
             selector: 'article',
-            providers: [via_seleccionada_1.ViaSeleccionada],
-            template: "\n    \n    \n  <div >\n      <h2>Ficha: {{selectedVia.nombreVia}} </h2>\n      <div><label>id: </label>{{selectedVia.id}}</div>\n      <div>\n        <label>Nombre: </label>\n        <input [(ngModel)]=\"selectedVia.nombreVia\" placeholder=\"name\"/>\n      </div>\n    </div>\n   \n      \n     \n   \n    "
-        }),
-        core_2.Injectable(), 
+            providers: [via_seleccionada_1.ViaSeleccionada, nav_component_1.NavComponent],
+            template: "\n    \n    \n  <div >\n      <h2>Ficha:   </h2>\n      <div><label>id: </label>{{item.id}}</div>\n      <div>\n        <label >Nombre: {{item.nombreVia}}</label>\n      <!-- <input [(ngModel)]=\"item.nombreVia\" placeholder=\"name\"/> -->\n      </div>\n    </div>\n   \n      \n     \n   \n    "
+        }), 
         __metadata('design:paramtypes', [via_seleccionada_1.ViaSeleccionada])
     ], ArticleComponent);
     return ArticleComponent;

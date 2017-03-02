@@ -11,6 +11,7 @@ import { HeaderComponent } from './header.component';
 import { FooterComponent } from './footer.component';
 import { ArticleComponent } from './article.component';
 import { Logger } from './logger.service';
+import { ViaSeleccionada } from './via-seleccionada';
 
 
 import { NavComponent } from './nav.component';
@@ -38,6 +39,7 @@ import { NavComponent } from './nav.component';
 
 
   ],
+  providers: [ViaSeleccionada],
 
   bootstrap: [ AppComponent ]
 

@@ -15,6 +15,7 @@ var app_component_1 = require('./app.component');
 var header_component_1 = require('./header.component');
 var footer_component_1 = require('./footer.component');
 var article_component_1 = require('./article.component');
+var via_seleccionada_1 = require('./via-seleccionada');
 var nav_component_1 = require('./nav.component');
 var AppModule = (function () {
     function AppModule() {
@@ -32,6 +33,7 @@ var AppModule = (function () {
                 nav_component_1.NavComponent,
                 article_component_1.ArticleComponent
             ],
+            providers: [via_seleccionada_1.ViaSeleccionada],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

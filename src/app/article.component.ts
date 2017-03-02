@@ -1,25 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Via } from './via';
 import {Injectable} from '@angular/core';
-import { ViaSeleccionada } from './via-seleccionada'
+import { ViaSeleccionada } from './via-seleccionada';
+import {Subscription} from 'rxjs/Subscription';
+import  { NavComponent} from './nav.component';
+
 
 
 @Component({
 
   selector: 'article',
 
-  providers: [ViaSeleccionada],
+  providers: [ViaSeleccionada, NavComponent],
 
   template: `
     
     
   <div >
-      <h2>Ficha: {{selectedVia.nombreVia}} </h2>
-      <div><label>id: </label>{{selectedVia.id}}</div>
+      <h2>Ficha:   </h2>
+      <div><label>id: </label>{{item.id}}</div>
       <div>
-        <label>Nombre: </label>
-        <input [(ngModel)]="selectedVia.nombreVia" placeholder="name"/>
+        <label >Nombre: {{item.nombreVia}}</label>
+      <!-- <input [(ngModel)]="item.nombreVia" placeholder="name"/> -->
       </div>
     </div>
    
@@ -31,13 +34,26 @@ import { ViaSeleccionada } from './via-seleccionada'
 })
 
  
-@Injectable()
-export class ArticleComponent {
 
-  
+export class ArticleComponent  implements OnInit, OnDestroy{
+
+
+
+  item: Via;
+  subscription:Subscription;
+
 constructor(private service: ViaSeleccionada) {}
 
-  selectedVia: Via=  this.service.getVia();
+   ngOnInit () {
+     this.subscription= this.service.viaSeleccionada$.subscribe(item => this.item = item)
+
+
+ }
+  ngOnDestroy() {
+    // prevent memory leak when component is destroyed
+    this.subscription.unsubscribe();
+  }
+
 
  
   }

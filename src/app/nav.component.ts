@@ -31,7 +31,7 @@ const VIAS: Via[] = [
 
   selector: 'nav',
 
-  providers: [ViaSeleccionada],
+  
 
   template: `
     
@@ -52,7 +52,7 @@ const VIAS: Via[] = [
 })
 
  
-@Injectable()
+
 export class NavComponent {
 
   

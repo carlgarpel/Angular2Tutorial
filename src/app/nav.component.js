@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var core_2 = require('@angular/core');
 var via_seleccionada_1 = require('./via-seleccionada');
 var VIAS = [
     { id: 10, tipoVia: 'CALLE', nombreVia: 'ALTAMIRA', distrito: 7, seccion: 1, codigoPostal: '04006' },
@@ -31,10 +30,8 @@ var NavComponent = (function () {
     NavComponent = __decorate([
         core_1.Component({
             selector: 'nav',
-            providers: [via_seleccionada_1.ViaSeleccionada],
             template: "\n    \n    \n     \n        <label>Listado de v\u00EDas: </label>\n        <ul class=\"vias\">\n          <li *ngFor=\"let via of cvias\"\n             [class.selected]=\"via === selectedVia\"\n             (click)=\"onSelect(via)\">\n                <span class=\"badge\">{{via.id}} </span> {{via.nombreVia}}\n         </li>\n        </ul>\n     \n   \n    "
-        }),
-        core_2.Injectable(), 
+        }), 
         __metadata('design:paramtypes', [via_seleccionada_1.ViaSeleccionada])
     ], NavComponent);
     return NavComponent;

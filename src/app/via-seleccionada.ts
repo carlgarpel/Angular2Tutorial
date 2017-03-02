@@ -1,23 +1,26 @@
 import {Injectable} from '@angular/core';
 import { Via } from './via';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import  { OnInit } from '@angular/core';
+
 
 
 @Injectable()
-export class ViaSeleccionada{
+export class ViaSeleccionada {
 
-    viaSeleccionada:Via;
+    item = new BehaviorSubject<Via>({id: 200, tipoVia: 'AVDA', nombreVia: 'ESTE', distrito: 7, seccion: 5, codigoPostal: '04003' });
 
-    constructor(){}
+    viaSeleccionada$ = this.item.asObservable();
+
 
     addVia(via:Via){
-        this.viaSeleccionada = via;
+      
+        this.item.next(via);
+        
+        console.log('addVia invocado ' + via.nombreVia + ' ' + via.id);
+
        
     }
 
-    getVia(){
-       
-        return this.viaSeleccionada;
-       // this.logger.log("seleccionado");
-    }
 
 }
