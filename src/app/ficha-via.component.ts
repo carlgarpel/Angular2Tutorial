@@ -1,16 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
 
 import { Via } from './via';
+import { ViaSeleccionada } from './via.service';
 
 //<div  *ngIf="via">
 
 @Component({
 
   selector: 'article',
+  providers: [ViaSeleccionada],
+
 
   template: `
 
-   <div  *ngIf="selectedVia">
+   <div >
 
         <h2>Código: </h2>
 
@@ -32,9 +36,17 @@ import { Via } from './via';
 
 })
 
-export class FichaViaComponent {
+export class FichaViaComponent implements OnInit {
+ selectedVia: Via;
 
- 
+
+
+  constructor(private service: ViaSeleccionada) { }
+  ngOnInit() {
+    this.selectedVia = this.service.getViaSeleccionada();
+    console.log(this.selectedVia.nombreVia)
+  }
+
 
  
 }

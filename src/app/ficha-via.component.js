@@ -9,16 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var via_service_1 = require('./via.service');
 //<div  *ngIf="via">
 var FichaViaComponent = (function () {
-    function FichaViaComponent() {
+    function FichaViaComponent(service) {
+        this.service = service;
     }
+    FichaViaComponent.prototype.ngOnInit = function () {
+        this.selectedVia = this.service.getViaSeleccionada();
+        console.log(this.selectedVia.nombreVia);
+    };
     FichaViaComponent = __decorate([
         core_1.Component({
             selector: 'article',
-            template: "\n\n   <div  *ngIf=\"selectedVia\">\n\n        <h2>C\u00F3digo: </h2>\n\n        <div  class=\"article\"><label>Tipo de v\u00EDa: </label>{{selectedVia.tipoVia}} </div>\n\n        <div  class=\"article\"><label>Nombre de v\u00EDa: </label>{{selectedVia.nombreVia}} </div>\n\n        <div> <label>Distrito: </label>{{selectedVia.distrito}} </div>\n\n        <div> <label>Secci\u00F3n: </label>{{selectedVia.seccion}} </div>\n\n        <div> <label>C\u00F3digo Postal: </label>{{selectedVia.codigoPostal}} </div>\n\n     </div>\n\n    \n\n  "
+            providers: [via_service_1.ViaSeleccionada],
+            template: "\n\n   <div >\n\n        <h2>C\u00F3digo: </h2>\n\n        <div  class=\"article\"><label>Tipo de v\u00EDa: </label>{{selectedVia.tipoVia}} </div>\n\n        <div  class=\"article\"><label>Nombre de v\u00EDa: </label>{{selectedVia.nombreVia}} </div>\n\n        <div> <label>Distrito: </label>{{selectedVia.distrito}} </div>\n\n        <div> <label>Secci\u00F3n: </label>{{selectedVia.seccion}} </div>\n\n        <div> <label>C\u00F3digo Postal: </label>{{selectedVia.codigoPostal}} </div>\n\n     </div>\n\n    \n\n  "
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [via_service_1.ViaSeleccionada])
     ], FichaViaComponent);
     return FichaViaComponent;
 }());
