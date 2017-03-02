@@ -28,7 +28,7 @@ var ArticleComponent = (function () {
         core_1.Component({
             selector: 'article',
             providers: [via_seleccionada_1.ViaSeleccionada, nav_component_1.NavComponent],
-            template: "\n    \n    \n  <div >\n      <h2>Ficha:   </h2>\n      <div><label>id: </label>{{item.id}}</div>\n      <div>\n        <label >Nombre: {{item.nombreVia}}</label>\n      <!-- <input [(ngModel)]=\"item.nombreVia\" placeholder=\"name\"/> -->\n      </div>\n    </div>\n   \n      \n     \n   \n    "
+            template: "\n    \n    \n  <div *ngIf=\"item\" >\n      <h2>Ficha:   </h2>\n      <div><label>id: </label>{{item.id}}</div>\n      <div>\n        <label >Nombre: {{item.nombreVia}}</label>\n      <input [(ngModel)]=\"item.nombreVia\" placeholder=\"name\"/> \n      </div>\n    </div>\n   \n      \n     \n   \n    "
         }), 
         __metadata('design:paramtypes', [nav_service_1.NavService])
     ], ArticleComponent);

@@ -18,12 +18,12 @@ import {NavService}   from './nav.service';
   template: `
     
     
-  <div >
+  <div *ngIf="item" >
       <h2>Ficha:   </h2>
       <div><label>id: </label>{{item.id}}</div>
       <div>
         <label >Nombre: {{item.nombreVia}}</label>
-      <!-- <input [(ngModel)]="item.nombreVia" placeholder="name"/> -->
+      <input [(ngModel)]="item.nombreVia" placeholder="name"/> 
       </div>
     </div>
    

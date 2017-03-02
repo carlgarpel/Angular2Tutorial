@@ -13,7 +13,7 @@ var BehaviorSubject_1 = require('rxjs/BehaviorSubject');
 var NavService = (function () {
     function NavService() {
         // Observable navItem source
-        this._navItemSource = new BehaviorSubject_1.BehaviorSubject({ id: 10, tipoVia: 'CALLE', nombreVia: 'ALTAMIRA', distrito: 7, seccion: 1, codigoPostal: '04006' });
+        this._navItemSource = new BehaviorSubject_1.BehaviorSubject(null);
         // Observable navItem stream
         this.navItem$ = this._navItemSource.asObservable();
     }
