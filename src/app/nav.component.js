@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var via_seleccionada_1 = require('./via-seleccionada');
 var nav_service_1 = require('./nav.service');
 var VIAS = [
     { id: 10, tipoVia: 'CALLE', nombreVia: 'ALTAMIRA', distrito: 7, seccion: 1, codigoPostal: '04006' },
@@ -20,14 +19,12 @@ var VIAS = [
     { id: 15, tipoVia: 'AVDA', nombreVia: 'JUAN', distrito: 7, seccion: 5, codigoPostal: '04003' }
 ];
 var NavComponent = (function () {
-    function NavComponent(service, _navService) {
-        this.service = service;
+    function NavComponent(_navService) {
         this._navService = _navService;
         this.cvias = VIAS;
     }
     NavComponent.prototype.onSelect = function (via) {
         this.selectedVia = via;
-        this.service.addVia(via);
         this._navService.changeNav(via);
     };
     NavComponent = __decorate([
@@ -35,7 +32,7 @@ var NavComponent = (function () {
             selector: 'nav',
             template: "\n    \n    \n     \n        <label>Listado de v\u00EDas: </label>\n        <ul class=\"vias\">\n          <li *ngFor=\"let via of cvias\"\n             [class.selected]=\"via === selectedVia\"\n             (click)=\"onSelect(via)\">\n                <span class=\"badge\">{{via.id}} </span> {{via.nombreVia}}\n         </li>\n        </ul>\n     \n   \n    "
         }), 
-        __metadata('design:paramtypes', [via_seleccionada_1.ViaSeleccionada, nav_service_1.NavService])
+        __metadata('design:paramtypes', [nav_service_1.NavService])
     ], NavComponent);
     return NavComponent;
 }());

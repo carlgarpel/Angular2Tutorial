@@ -16,7 +16,6 @@ var aside_component_1 = require('./aside.component');
 var header_component_1 = require('./header.component');
 var footer_component_1 = require('./footer.component');
 var article_component_1 = require('./article.component');
-var via_seleccionada_1 = require('./via-seleccionada');
 var nav_service_1 = require('./nav.service');
 var nav_component_1 = require('./nav.component');
 var AppModule = (function () {
@@ -36,7 +35,7 @@ var AppModule = (function () {
                 article_component_1.ArticleComponent,
                 aside_component_1.AsideComponent
             ],
-            providers: [via_seleccionada_1.ViaSeleccionada, nav_service_1.NavService],
+            providers: [nav_service_1.NavService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
