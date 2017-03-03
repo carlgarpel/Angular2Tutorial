@@ -9,28 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var nav_component_1 = require('./nav.component');
 var nav_service_1 = require('./nav.service');
-var HeaderComponent = (function () {
-    function HeaderComponent(_navService) {
+var AsideComponent = (function () {
+    function AsideComponent(_navService) {
         this._navService = _navService;
-        this.title = 'Callejero';
     }
-    HeaderComponent.prototype.ngOnInit = function () {
+    AsideComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.subscription = this._navService.navItem$.subscribe(function (item) { return _this.item = item; });
     };
-    HeaderComponent.prototype.ngOnDestroy = function () {
+    AsideComponent.prototype.ngOnDestroy = function () {
         // prevent memory leak when component is destroyed
         this.subscription.unsubscribe();
     };
-    HeaderComponent = __decorate([
+    AsideComponent = __decorate([
         core_1.Component({
-            selector: 'header',
-            template: "\n\n  <h1> {{title}}</h1>\n  <div *ngIf=\"item\" >\n  \t <div>\n  \t \t<label>id: </label>{{item.id}}\n \t\t<label>Via: </label>{{item.tipoVia}}\n \t\t<label> </label>{{item.nombreVia}}\n   </div>\n  </div>\n  "
+            selector: 'aside',
+            providers: [nav_component_1.NavComponent],
+            template: "\n    \n    \n  <div *ngIf=\"item\" >\n      <h2>Editar:   </h2>\n      <div><label>id: </label>{{item.id}}</div>\n      <div><input [(ngModel)]=\"item.tipoVia\" placeholder=\"tipo via\"/></div>\n      <div><input [(ngModel)]=\"item.nombreVia\" placeholder=\"nombre via\"/></div>\n      <div><input [(ngModel)]=\"item.distrito\" placeholder=\"distrito\"/></div>\n      <div><input [(ngModel)]=\"item.seccion\" placeholder=\"seccion\"/></div>\n      <div><input [(ngModel)]=\"item.codigoPostal\" placeholder=\"C.P.\"/></div>\n    </div>\n   \n      \n     \n   \n    "
         }), 
         __metadata('design:paramtypes', [nav_service_1.NavService])
-    ], HeaderComponent);
-    return HeaderComponent;
+    ], AsideComponent);
+    return AsideComponent;
 }());
-exports.HeaderComponent = HeaderComponent;
-//# sourceMappingURL=header.component.js.map
+exports.AsideComponent = AsideComponent;
+//# sourceMappingURL=aside.component.js.map

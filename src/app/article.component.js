@@ -9,8 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var via_seleccionada_1 = require('./via-seleccionada');
-var nav_component_1 = require('./nav.component');
 var nav_service_1 = require('./nav.service');
 var ArticleComponent = (function () {
     function ArticleComponent(_navService) {
@@ -27,8 +25,7 @@ var ArticleComponent = (function () {
     ArticleComponent = __decorate([
         core_1.Component({
             selector: 'article',
-            providers: [via_seleccionada_1.ViaSeleccionada, nav_component_1.NavComponent],
-            template: "\n    \n    \n  <div *ngIf=\"item\" >\n      <h2>Ficha:   </h2>\n      <div><label>id: </label>{{item.id}}</div>\n      <div>\n        <label >Nombre: {{item.nombreVia}}</label>\n      <input [(ngModel)]=\"item.nombreVia\" placeholder=\"name\"/> \n      </div>\n    </div>\n   \n      \n     \n   \n    "
+            template: "\n    \n    \n  <div *ngIf=\"item\" >\n      <h2>Ficha:   </h2>\n      <div><label>id: </label>{{item.id}}</div>\n      <div><label >Tipo: {{item.tipoVia}}</label></div>\n      <div><label >Nombre: {{item.nombreVia}}</label></div>\n      <div><label >Distrito: {{item.distrito}}</label></div>\n      <div><label >Secci\u00F3n: {{item.seccion}}</label></div>\n      <div><label >C.P.: {{item.codigoPostal}} </label></div>\n    </div>\n   \n      \n     \n   \n    "
         }), 
         __metadata('design:paramtypes', [nav_service_1.NavService])
     ], ArticleComponent);

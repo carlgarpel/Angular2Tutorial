@@ -2,29 +2,28 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 
 import { Via } from './via';
-
+import  { NavComponent } from './nav.component';
 import {NavService}   from './nav.service';  
-
 
 
 
 @Component({
 
-  selector: 'article',
+  selector: 'aside',
 
-  
+  providers: [NavComponent],
 
   template: `
     
     
   <div *ngIf="item" >
-      <h2>Ficha:   </h2>
+      <h2>Editar:   </h2>
       <div><label>id: </label>{{item.id}}</div>
-      <div><label >Tipo: {{item.tipoVia}}</label></div>
-      <div><label >Nombre: {{item.nombreVia}}</label></div>
-      <div><label >Distrito: {{item.distrito}}</label></div>
-      <div><label >Sección: {{item.seccion}}</label></div>
-      <div><label >C.P.: {{item.codigoPostal}} </label></div>
+      <div><input [(ngModel)]="item.tipoVia" placeholder="tipo via"/></div>
+      <div><input [(ngModel)]="item.nombreVia" placeholder="nombre via"/></div>
+      <div><input [(ngModel)]="item.distrito" placeholder="distrito"/></div>
+      <div><input [(ngModel)]="item.seccion" placeholder="seccion"/></div>
+      <div><input [(ngModel)]="item.codigoPostal" placeholder="C.P."/></div>
     </div>
    
       
@@ -36,7 +35,7 @@ import {NavService}   from './nav.service';
 
  
 
-export class ArticleComponent  implements OnInit, OnDestroy{
+export class AsideComponent  implements OnInit, OnDestroy{
 
 
 
@@ -57,7 +56,3 @@ constructor(private _navService:NavService) {}
 
  
   }
-
-
-
-
