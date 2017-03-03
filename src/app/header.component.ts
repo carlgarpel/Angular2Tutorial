@@ -27,7 +27,7 @@ import {NavService}   from './nav.service';
 
 export class HeaderComponent implements OnInit, OnDestroy{
 
-	title='Callejero';
+  title='Callejero de Almería';
 
   item: Via;
   subscription:Subscription;

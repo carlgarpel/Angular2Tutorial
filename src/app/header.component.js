@@ -13,7 +13,7 @@ var nav_service_1 = require('./nav.service');
 var HeaderComponent = (function () {
     function HeaderComponent(_navService) {
         this._navService = _navService;
-        this.title = 'Callejero';
+        this.title = 'Callejero de Almería';
     }
     HeaderComponent.prototype.ngOnInit = function () {
         var _this = this;
